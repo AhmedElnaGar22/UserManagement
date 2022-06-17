@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UserSignUp.Data;
 
@@ -11,9 +12,10 @@ using UserSignUp.Data;
 namespace UserSignUp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220617163808_addRules")]
+    partial class addRules
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace UserSignUp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("permissonRoles", (string)null);
+                    b.ToTable("permissonRoles");
                 });
 
             modelBuilder.Entity("UserSignUp.Models.Permissons", b =>
@@ -55,7 +57,7 @@ namespace UserSignUp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("permissons", (string)null);
+                    b.ToTable("permissons");
                 });
 
             modelBuilder.Entity("UserSignUp.Models.Roles", b =>
@@ -72,7 +74,7 @@ namespace UserSignUp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("roles", (string)null);
+                    b.ToTable("roles");
                 });
 
             modelBuilder.Entity("UserSignUp.Models.User", b =>
@@ -112,7 +114,7 @@ namespace UserSignUp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

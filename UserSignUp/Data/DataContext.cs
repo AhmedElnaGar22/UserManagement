@@ -18,5 +18,8 @@ namespace UserSignUp.Data
         }
 
         public DbSet<User> Users => Set<User>();
+        public DbSet<Permissons> permissons => Set<Permissons>();
+        public DbSet<PermissonRole> permissonRoles => Set<PermissonRole>();
+        public DbSet<Roles> roles => Set<Roles>();
     }
 }

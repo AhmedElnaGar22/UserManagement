@@ -1,4 +1,6 @@
-﻿namespace UserSignUp.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace UserSignUp.Models
 {
     public class User
     {
@@ -10,5 +12,9 @@
         public DateTime? VerifiedAt { get; set; }
         public string? PasswordResetToken { get; set; }
         public DateTime? ResetTokenExpires { get; set; }
+
+        [ForeignKey("Roles")]
+        public int Role_Id { get; set; } = 3;
+
     }
 }
